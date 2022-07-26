@@ -16,9 +16,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <script>
-document.write(document.key1);
-document.write(document.key2);
-document.write(document.referrer);
+	function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+document.write("key1 ="+document.key1 +'<br>'+"key2 ="document.key2);
 </script>
 <p>I'm hosted with GitHub Pages.</p>
 </body>
